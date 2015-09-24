@@ -2,25 +2,23 @@ import React from 'react';
 
 export default class IndexComponent extends React.Component {
   render() {
-    if (this.props.items.length === 0) {
-      return (
-        <p ref="empty">Index is empty.</p>
-      );
+    switch (this.props.tagName ) {
+      default:
+      case 'img':
+        return this.renderImage(this.props.src);
+        break;
     }
+  }
 
+  renderImage(src) {
     return (
-      <section>
-        <h2>react-webpack-boilerplate</h2>
-        <ul ref="indexList" className="index-list">
-          {this.props.items.map((item, index) => {
-            return (<li key={index}>item {item}</li>);
-          })}
-        </ul>
-      </section>
+      <img src={src}></img>
     );
   }
+
+  renderVideo(src) {}
 }
 
 IndexComponent.defaultProps = {
-  items: []
+  tagName: 'img'
 };
