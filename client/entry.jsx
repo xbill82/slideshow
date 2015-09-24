@@ -3,7 +3,7 @@
 import 'styles/main.css';
 
 import React from 'react/addons';
-import IndexComponent from 'components/Index/IndexComponent.jsx';
+import SlideContainer from 'components/Slides/SlideContainer.jsx';
 
 var slides = [
   {
@@ -27,4 +27,4 @@ var slides = [
 var i = 0;
 var visibility = 'visible';
 
-React.render(<IndexComponent tagName={slides[i].tagName} src={slides[i].src} visibility={visibility}/>, document.body);
+React.render(<SlideContainer tagName={slides[i].tagName} src={slides[i].src} visibility={visibility}/>, document.body);
