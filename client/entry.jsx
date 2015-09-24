@@ -24,6 +24,6 @@ var slides = [
   }
 ]
 
-var i = 0;
+var i = 1;
 
 React.render(<IndexComponent tagName={slides[i].tagName} src={slides[i].src}/>, document.body);

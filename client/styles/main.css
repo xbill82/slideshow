@@ -1,6 +1,9 @@
 body {
   background: black;
   font-family: "Helvetica Neue", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 img, video {
