@@ -1,36 +1,48 @@
 import React from 'react';
 
 export default class IndexComponent extends React.Component {
+  onKey(event) {
+    console.log('Keypressed ');
+  }
+
   render() {
+    var style = {
+      visibility: this.props.visibility
+    };
+
+    return (
+      <div className="container" style={style} onKeyPress={this.onKey} tabIndex="1" ref="divContainer">
+        {this.renderTag()}
+      </div>
+    )
+  }
+
+  componentDidMount() {
+    React.findDOMNode(this.refs.divContainer).focus();
+  }
+
+  renderTag() {
     switch (this.props.tagName) {
       case 'video':
-        return this.renderVideo(this.props.src, this.props.visibility);
+        return this.renderVideo(this.props.src);
         break;
 
       default:
       case 'img':
-        return this.renderImage(this.props.src, this.props.visibility);
+        return this.renderImage(this.props.src);
         break;
     }
   }
 
   renderImage(src, visibility) {
-    var style = {
-      visibility: visibility
-    };
-
     return (
-      <img src={src} style={style}></img>
+      <img src={src} ></img>
     );
   }
 
-  renderVideo(src, visibility) {
-    var style = {
-      visibility: visibility
-    };
-
+  renderVideo(src) {
     return (
-      <video src={src} autoPlay style={style}></video>
+      <video src={src} autoPlay></video>
     )
   }
 }
