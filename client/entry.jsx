@@ -24,6 +24,7 @@ var slides = [
   }
 ]
 
-var i = 1;
+var i = 0;
+var visibility = 'visible';
 
-React.render(<IndexComponent tagName={slides[i].tagName} src={slides[i].src}/>, document.body);
+React.render(<IndexComponent tagName={slides[i].tagName} src={slides[i].src} visibility={visibility}/>, document.body);
