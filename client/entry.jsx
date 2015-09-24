@@ -17,9 +17,13 @@ var slides = [
   {
     tagName: 'img',
     src: 'assets/IMG_3537.jpg'
+  },
+  {
+    tagName: 'video',
+    src: 'assets/bear.mp4'
   }
 ]
 
-var i = 2;
+var i = 0;
 
 React.render(<IndexComponent tagName={slides[i].tagName} src={slides[i].src}/>, document.body);
