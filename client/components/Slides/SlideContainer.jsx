@@ -2,8 +2,9 @@ import React from 'react';
 import Slide from 'components/Slides/Slide.jsx';
 
 export default class SlideContainer extends React.Component {
-  getInitialState() {
-    return {
+  constructor(props) {
+    super(props);
+    this.state = {
       slides: [
         {
           tagName: 'img',
