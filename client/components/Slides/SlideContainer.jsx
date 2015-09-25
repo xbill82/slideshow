@@ -10,12 +10,16 @@ export default class SlideContainer extends React.Component {
   }
 
   onKey(event) {
-    const { show, hide, increment, decrement } = this.props;
+    const { toggleVisibility, show, hide, nextSlide, previousSlide } = this.props;
 
     switch(event.key) {
       case 's':
         console.log('pressed s' );
         show();
+      break;
+      case ' ':
+        console.log('pressed spacebar' );
+        toggleVisibility();
       break;
       case 'h':
         console.log('pressed h');
@@ -23,18 +27,18 @@ export default class SlideContainer extends React.Component {
       break;
       case 'n':
         console.log('pressed n');
-        increment();
+        nextSlide();
       break;
       case 'd':
-        console.log('pressed d');
-        decrement();
+        console.log('pressed p');
+        previousSlide();
       break;
     }
   }
 
   render() {
     var style = {
-      visibility: this.props.visibility
+      opacity: this.props.opacity
     };
 
     return (

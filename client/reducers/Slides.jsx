@@ -11,12 +11,12 @@ export function index(state = 0, action) {
   }
 }
 
-export function visibility(state = 'visible', action) {
+export function opacity(state = 1, action) {
   switch (action.type) {
     case SHOW_SLIDE:
-      return 'visible';
+      return 1;
     case HIDE_SLIDE:
-      return 'hidden';
+      return 0;
     default:
       return state;
   }

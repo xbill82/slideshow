@@ -5,7 +5,7 @@ import * as SlideActions from '../actions/SlideActions.jsx';
 
 function mapStateToProps(state) {
   return {
-    visibility: state.visibility,
+    opacity: state.opacity,
     index: state.index
   };
 }

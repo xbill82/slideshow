@@ -6,11 +6,12 @@ import React from 'react/addons';
 import SlideContainer from 'components/Slides/SlideContainer.jsx';
 
 import { createStore } from 'redux';
-import slidesApp from './reducers/index.jsx';
+import slidesAppReducer from './reducers/index.jsx';
 import { Provider } from 'react-redux';
 import App from './containers/App.jsx';
+import configureStore from 'store/configureStore.jsx';
 
-let store = createStore(slidesApp);
+let store = configureStore();
 
 React.render(
   <Provider store={store}>

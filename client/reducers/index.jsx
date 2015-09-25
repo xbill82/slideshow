@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import { index, visibility } from './Slides.jsx';
+import { index, opacity } from './Slides.jsx';
 
 const rootReducer = combineReducers({
   index: index,
-  visibility: visibility
+  opacity: opacity
 });
 
 export default rootReducer;
