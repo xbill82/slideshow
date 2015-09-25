@@ -19,6 +19,7 @@ app.set('views', path.join(process.cwd(), '/server/views'));
 app.use(compress());
 app.use(layouts);
 app.use('/client', express.static(path.join(process.cwd(), '/client')));
+app.use('/assets', express.static(path.join(process.cwd(), '/client/assets')));
 
 app.disable('x-powered-by');
 
