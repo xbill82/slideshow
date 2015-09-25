@@ -28,13 +28,19 @@ export function hide() {
 }
 
 export function nextSlide() {
-  return {
-    type: INCREMENT_INDEX
-  };
+  return (dispatch) => {
+    dispatch({
+      type: INCREMENT_INDEX
+    });
+    dispatch(show());
+  }
 }
 
 export function previousSlide() {
-  return {
-    type: DECREMENT_INDEX
-  };
+  return (dispatch) => {
+    dispatch({
+CREMENT_INDEX
+    });
+    dispatch(show());
+  }
 }
