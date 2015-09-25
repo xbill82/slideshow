@@ -1,11 +1,18 @@
 import { INCREMENT_INDEX, DECREMENT_INDEX, SHOW_SLIDE, HIDE_SLIDE } from '../actions/SlideActions.jsx';
+import { slides } from '../config/Slides.jsx';
 
 export function index(state = 0, action) {
   switch (action.type) {
     case INCREMENT_INDEX:
-      return state + 1;
+      if (state < slides.length - 1)
+        return state + 1;
+      else
+        return state;
     case DECREMENT_INDEX:
-      return state - 1;
+      if (state > 0)
+        return state - 1;
+      else
+        return state;
     default:
       return state;
   }
