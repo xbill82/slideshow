@@ -39,7 +39,7 @@ export function nextSlide() {
 export function previousSlide() {
   return (dispatch) => {
     dispatch({
-CREMENT_INDEX
+      type: DECREMENT_INDEX
     });
     dispatch(show());
   }

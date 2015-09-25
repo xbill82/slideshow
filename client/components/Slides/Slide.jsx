@@ -23,8 +23,20 @@ export default class Slide extends React.Component {
 
   renderVideo(src) {
     return (
-      <video src={src} autoPlay></video>
+      <video src={src} autoPlay ref="video"></video>
     )
+  }
+
+  pauseSlide() {
+    if (this.refs.video) {
+      React.findDOMNode(this.refs.video).pause();
+    }
+  }
+
+  playSlide() {
+    if (this.refs.video) {
+      React.findDOMNode(this.refs.video).play();
+    }
   }
 }
 

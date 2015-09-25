@@ -41,9 +41,14 @@ export default class SlideContainer extends React.Component {
       opacity: this.props.opacity
     };
 
+    if (this.props.opacity < 1)
+      this.refs.slide.pauseSlide();
+    else
+      this.refs.slide.playSlide();
+
     return (
       <div className="container" style={style} onKeyPress={this.onKey} tabIndex="1" ref="divContainer">
-        <Slide tagName={this.slides[this.props.index].tagName} src={this.slides[this.props.index].src} />
+        <Slide tagName={this.slides[this.props.index].tagName} src={this.slides[this.props.index].src} ref="slide"/>
       </div>
     )
   }
