@@ -50,7 +50,9 @@ export default class SlideContainer extends React.Component {
 
   componentDidMount() {
     React.findDOMNode(this.refs.divContainer).focus();
+  }
 
+  componentDidUpdate() {
     if (this.refs.slide) {
       if (this.props.opacity < 1)
         this.refs.slide.pauseSlide();
