@@ -12,25 +12,25 @@ export default class SlideContainer extends React.Component {
   onKey(event) {
     const { toggleVisibility, show, hide, nextSlide, previousSlide } = this.props;
 
-    switch(event.key) {
-      case 's':
-        console.log('pressed s' );
+    switch(event.keyCode) {
+      case 83: // KeyS
+        console.log('Showing slide');
         show();
       break;
-      case ' ':
-        console.log('pressed spacebar' );
+      case 32: // Spacebar
+        console.log('Toggling slide visibility');
         toggleVisibility();
       break;
-      case 'h':
-        console.log('pressed h');
+      case 72: // KeyH
+        console.log('Hiding slide');
         hide();
       break;
-      case 'n':
-        console.log('pressed n');
+      case 39: // Right arrow
+        console.log('Next slide');
         nextSlide();
       break;
-      case 'd':
-        console.log('pressed p');
+      case 37: // Left arrow
+        console.log('Previous slide');
         previousSlide();
       break;
     }
@@ -42,7 +42,7 @@ export default class SlideContainer extends React.Component {
     };
 
     return (
-      <div className="container" style={style} onKeyPress={this.onKey} tabIndex="1" ref="divContainer">
+      <div className="container" style={style} onKeyDown={this.onKey} tabIndex="1" ref="divContainer">
         <Slide tagName={this.slides[this.props.index].tagName} src={this.slides[this.props.index].src} ref="slide"/>
       </div>
     )
