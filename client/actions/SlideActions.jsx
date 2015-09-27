@@ -3,6 +3,8 @@ export const DECREMENT_INDEX = 'DECREMENT_INDEX';
 export const SHOW_SLIDE = 'SHOW_SLIDE';
 export const HIDE_SLIDE = 'HIDE_SLIDE';
 
+const DELAY = 200;
+
 export function toggleVisibility() {
   return (dispatch, getState) => {
     const { opacity } = getState();
@@ -29,18 +31,24 @@ export function hide() {
 
 export function nextSlide() {
   return (dispatch) => {
-    dispatch({
-      type: INCREMENT_INDEX
-    });
-    dispatch(show());
+    dispatch(hide());
+    setTimeout(() => {
+      dispatch({
+        type: INCREMENT_INDEX
+      });
+      dispatch(show());
+    }, DELAY);
   }
 }
 
 export function previousSlide() {
   return (dispatch) => {
-    dispatch({
-      type: DECREMENT_INDEX
-    });
-    dispatch(show());
+    dispatch(hide());
+    setTimeout(() => {
+      dispatch({
+        type: DECREMENT_INDEX
+      });
+      dispatch(show());
+    }, DELAY);
   }
 }
